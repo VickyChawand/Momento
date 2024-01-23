@@ -31,7 +31,7 @@
   height: 71vh;
   margin: auto;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   position: relative;
 }
 
