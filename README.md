@@ -20,11 +20,15 @@ Memento is your go-to photo management site, offering a visually appealing platf
 
 
 ## Screenshots
-
+- Home
 ![Home](./src/Components/assests/Home.png)
+- Form
 ![Form](./src/Components/assests/Form.png)
+- Gallery
 ![Gallery](./src/Components/assests/Gallery.png)
+- Image-hover
 ![Image-hover](./src/Components/assests/Image-hover.png)
+- Image-card
 ![Image-card](./src/Components/assests/Image-card.png)
 
 
