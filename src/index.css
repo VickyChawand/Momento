@@ -1,13 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-image: linear-gradient(135deg, #e5bdf6 10%, #d8dede 100%);
+  color: white;
+  font-family: "Quicksand", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 40px;
+  font-size: 17px;
+}
+button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(135deg, #eb79cd 10%, #9795d1 100%);
+  left: 0;
+  top: 0;
+  border-radius: 40px;
+}
+/* glow */
+button::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ec9b9b91,
+    #e3ba9984,
+    #fffb007b,
+    #48ff006c,
+    #00ffd54c,
+    #002aff48,
+    #ff00c868,
+    #ff000077
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  filter: blur(3px);
+  animation: glowing 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 40px;
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+button:active:after {
+  background: transparent;
+}
+
+button:active {
+  color: #000;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-size: 2rem;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media screen and (min-width: 426px) and (max-width: 767px){
+  button{
+    padding: 9px 9px;
+  }
 }
