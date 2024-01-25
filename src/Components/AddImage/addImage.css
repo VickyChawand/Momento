@@ -77,7 +77,9 @@ input {
   height: auto;
   border-radius: 5px;
 }
-
+.error{
+ border: 1px solid red;
+}
 ::file-selector-button {
   display: none;
 }

@@ -23,11 +23,11 @@ function AddMemoriesCard({ onClose }) {
       return;
     }
     if (progress !== 100) {
-      const notify = () => toast("Image is still uploading. Please wait.");
+      const notify = () => toast("Image is still uploading. Please wait...");
       notify();
       return;
     }
-
+    
     if (error) {
       console.error("Image upload error:", error);
       const notify = () => toast("Image upload failed");
