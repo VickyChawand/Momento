@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./addImage.css";
 import useStorage from "../hooks/useStorage";
 import Card from "../assests/card-img.png";
+import { MdOutlineCancel } from "react-icons/md";
 
 function AddMemoriesCard({ onClose }) {
   const [title, setTitle] = useState("");
@@ -47,7 +48,7 @@ function AddMemoriesCard({ onClose }) {
       <div className="card-h">
         <h2>Add Memories</h2>
         <button onClick={onClose} className="close-button">
-          X
+        <MdOutlineCancel /> X
         </button>
       </div>
       <div className="content">

@@ -1,4 +1,3 @@
-// GalleryScreen.js
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { projectFirestore } from "../../firebase";
@@ -9,6 +8,7 @@ import "./galleryScreen.css";
 function GalleryScreen() {
   const [memories, setMemories] = useState([]);
   const [selectedMemory, setSelectedMemory] = useState(null);
+  
 
   useEffect(() => {
     const fetchMemories = async () => {
@@ -30,6 +30,7 @@ function GalleryScreen() {
   const handleThumbnailClick = (memory) => {
     setSelectedMemory(memory);
   };
+  
 
   const handleDelete = async () => {
     if (!selectedMemory) return;
@@ -81,10 +82,13 @@ function GalleryScreen() {
 
       {selectedMemory && (
         <Modal
-          selectedMemory={selectedMemory}
-          handleClose={handleCloseDetails}
-          handleDelete={handleDelete}
-        />
+        selectedMemory={selectedMemory}
+        handleClose={handleCloseDetails}
+        handleDelete={handleDelete}
+        memories={memories}
+        setMemories={setMemories}
+      />
+      
       )}
     </div>
   );
