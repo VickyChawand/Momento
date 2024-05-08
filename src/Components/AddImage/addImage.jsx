@@ -34,6 +34,7 @@ function AddMemoriesCard({ onClose }) {
       const notify = () => toast("Image upload failed");
       notify();
     }
+    onClose();
   };
 
   return (
@@ -59,7 +60,7 @@ function AddMemoriesCard({ onClose }) {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className={!title ? "error" : ""}
+              className={!title ? "" : "error"}
             />
           </div>
           <div className="form-item">
@@ -68,7 +69,7 @@ function AddMemoriesCard({ onClose }) {
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className={!description ? "error" : ""}
+              className={!description ? "" : "error"}
             />
           </div>
           <div className="form-item">
@@ -76,7 +77,7 @@ function AddMemoriesCard({ onClose }) {
             <input
               type="file"
               onChange={handleImageChange}
-              className={!image ? "error" : ""}
+              className={!image ? "" : "error"}
             />
           </div>
           <button onClick={handleSubmit}>Submit</button>
